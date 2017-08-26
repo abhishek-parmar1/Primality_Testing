@@ -110,8 +110,9 @@ void getDivisors( int row_size)
 		temp.assign(divisors.begin(),divisors.end());		
 	}
 	
-	// to remove the 0 form the divisors list
-	divisors.assign(divisors.begin()+1, divisors.end());
+	// to remove the 0 form the divisors list if present
+	if(divisors.at(0) == 0)
+		divisors.assign(divisors.begin()+1, divisors.end());
 	
 	// display the divisors of the number
 	for(int i=0;i<divisors.size();i++)
