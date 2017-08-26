@@ -1,4 +1,4 @@
-// wap to get prime factors of a number
+// hybrid wap
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <map>
 #include <vector>
+#include <list>
 
 using namespace std;
 
@@ -115,10 +116,11 @@ void getDivisors( int row_size)
 		divisors.assign(divisors.begin()+1, divisors.end());
 	
 	// display the divisors of the number
+	cout<<"divisors are : \n";
 	for(int i=0;i<divisors.size();i++)
 		cout<<divisors.at(i)<<" ";
 	// display count of the divisors of the number
-	cout<<"\n"<<divisors.size();	
+	cout<<"\ncount of divisors : "<<divisors.size();	
 }
 
 // function to get the count of numbers less than n and relative prime to it
@@ -129,7 +131,53 @@ void eulersFunction()
 	{
 		count = count * ( (pow(itr->first,itr->second-1))*(itr->first-1) );
 	}
-	cout<<"count of number less than number and relative prime to it : "<<count<<"\n";
+	cout<<"\ncount of number less than number and relative prime to it : "<<count<<"\n";
+}
+
+// function to get the euler set elements 
+void getEulerElements(int n)
+{
+	// final output list
+	list<int> reduced_residue_set;
+	// non relative prime list
+	list<int> non_relative_prime;
+	list<int> :: iterator itr2;
+	
+	// store the numbers from 2 to n-1 in the output list  
+	for(int i=2; i<n; i++)
+		reduced_residue_set.push_back(i);
+	
+	// store the multiples of the elements which divides the n in non_relative_prime list 
+	for(itr2=reduced_residue_set.begin(); itr2!=reduced_residue_set.end(); itr2++)
+		{
+			int temp1=*itr2,temp2;
+			if(n%temp1==0)
+			{
+				temp2=temp1;
+				while(temp2<n)
+				{
+					non_relative_prime.push_back(temp2);
+					temp2+=temp1;
+				}	
+			}
+		}
+	
+	// to remove the duplicates from the non_relative_prime list
+	non_relative_prime.sort();
+	non_relative_prime.unique();
+	
+	// remove the non_relative_prime from the reduced_residue_set
+	for(itr2=non_relative_prime.begin(); itr2!=non_relative_prime.end(); itr2++)
+		reduced_residue_set.remove(*itr2);
+
+	// insert 1 in the reduced_residue_set
+	reduced_residue_set.push_front(1);
+	
+	// display the elements of the reduced_residue_set
+	for(itr2=reduced_residue_set.begin(); itr2!=reduced_residue_set.end(); itr2++)
+		cout<<*itr2<<" ";
+	// display size of reduced_residue_set
+	cout<<"\ncount (for verification) : "<<reduced_residue_set.size();
 }
 
 int main()
@@ -153,11 +201,14 @@ int main()
 	// for sum of divisors of a number
 	divisorsSum();
 	
+	// get the divisors of a number using prime factors of a number 
+	getDivisors(max_power);
+	
 	// get the count of numbers less than n and relative prime to it
 	eulersFunction();
 	
-	// get the divisors of a number using prime factors of a number 
-	getDivisors(max_power);
+	// get euler set elements
+	getEulerElements(n);
 	
 	return 0;
 }
