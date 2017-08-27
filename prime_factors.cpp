@@ -1,4 +1,4 @@
-// hybrid wap
+// hybrid program
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -147,20 +147,16 @@ void getEulerElements(int n)
 	for(int i=2; i<n; i++)
 		reduced_residue_set.push_back(i);
 	
-	// store the multiples of the elements which divides the n in non_relative_prime list 
-	for(itr2=reduced_residue_set.begin(); itr2!=reduced_residue_set.end(); itr2++)
+	// store the number which are multiples of prime factors of n and less than n in the non_relative_prime
+	for(itr=factors.begin(); itr!=factors.end(); itr++)
+	{
+		int temp=itr->first;
+		while(temp<n)
 		{
-			int temp1=*itr2,temp2;
-			if(n%temp1==0)
-			{
-				temp2=temp1;
-				while(temp2<n)
-				{
-					non_relative_prime.push_back(temp2);
-					temp2+=temp1;
-				}	
-			}
+			non_relative_prime.push_back(temp);
+			temp+=itr->first;
 		}
+	}
 	
 	// to remove the duplicates from the non_relative_prime list
 	non_relative_prime.sort();
