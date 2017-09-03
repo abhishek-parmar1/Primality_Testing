@@ -3,7 +3,7 @@
 #include<conio.h>
 #include<math.h>
 #include<time.h>
-#define max 10000	
+#define max 1000000	
 int isPrime()
 {
 	FILE *f;
@@ -48,6 +48,9 @@ int isPrime()
 				
 				if(k%100==0)
 					fprintf(f,"\n");
+				
+				if(k==10000)
+					break;
 			}
 						
 		}
