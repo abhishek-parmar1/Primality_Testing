@@ -134,6 +134,7 @@ int main()
 	
 	f=fopen("divisor.html","w");
 	fprintf(f,"<table border='2px'>");
+	fprintf(f,"<thead><tr align='center'><td><b>NUMBERS</b></td><td><b>COUNT OF DIVISORS</b></td><td><b>SUM OF DIVISORS</b></td><td><b>DIVISORS</b></td></tr></thead>");
 	for(int i=2;i<=10000;i++)
 	{
 		fprintf(f,"<tr>");
