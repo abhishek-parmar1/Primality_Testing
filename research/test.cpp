@@ -41,7 +41,8 @@ ULL calculate(ULL i,ULL d)
  
 int main()
 {
-	for(ULL i=30134933; i<=300000000; i++)
+	//34173511
+	for(ULL i=34173511; i<=300000000; i++)
 	{
 		if(primeOrNot(i)==1)
 		{
