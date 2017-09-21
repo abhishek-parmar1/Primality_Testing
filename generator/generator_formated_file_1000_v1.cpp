@@ -126,7 +126,7 @@ int main()
 	ULL n;
 	FILE *f;
 	
-	f=fopen("primitive_root.html","w");
+	f=fopen("primitive_root_v1.html","w");
 	fprintf(f,"<table border='2px'>");
 	fprintf(f,"<thead> <tr align='center'> <td><b>Prime Numbers</b></td> <td><b>Primitive Roots</b></td> </tr> </thead>");
 	
@@ -162,6 +162,7 @@ int main()
 		{
 			generators.push_back(powers[*itr1]);
 		}
+		generators.sort();
 		
 		// display generators
 		//cout<<" generators are \n";
