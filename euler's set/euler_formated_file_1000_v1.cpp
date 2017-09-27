@@ -1,3 +1,8 @@
+/* wap for : 
+            1> count of relative prime 
+            2> list all the relative primes 
+                                           of all numbers 
+*/
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>

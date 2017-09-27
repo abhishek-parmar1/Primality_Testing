@@ -1,4 +1,4 @@
-// program to store the prime numbers in a file
+// WAP to store the prime numbers in a file
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>

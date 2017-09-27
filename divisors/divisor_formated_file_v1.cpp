@@ -1,3 +1,9 @@
+/* wap for : 
+            1> count of divisros 
+            2> sum of all divisors
+            3> list all divisors 
+                                 of all numbers 
+*/
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>

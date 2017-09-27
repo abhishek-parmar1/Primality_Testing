@@ -59,7 +59,7 @@ int main()
 	fprintf(f,"<table border='2px'>");
 	fprintf(f,"<thead> <tr align='center'> <td><b>Prime Numbers</b></td> <td><b>Smallest Generator</b></td> <td><b>power with 10 remainder</b></td> <td><b>inverse of 10</b></td> </tr> </thead>");
 	
-	for(n=11; n<=1000; n++)
+	for(n=11; n<=10000; n++)
 	{
 		
 		ULL first_gen=0;

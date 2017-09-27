@@ -1,3 +1,7 @@
+/*
+Find third number from 3*10^7 onwards where 2^(p-1) congurent to 1( mod(p^2)) :
+*/
+
 #include<iostream>
 #include<stdio.h>
 #include<stdlib.h>

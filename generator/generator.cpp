@@ -1,3 +1,7 @@
+/* wap for : 
+            1> list all Primitive Roots (generators) 
+                                                     of all Prime numbers 
+*/
 #include<stdio.h>
 #include<iostream>
 #include<stdlib.h>
